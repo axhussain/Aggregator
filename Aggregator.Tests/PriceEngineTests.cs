@@ -17,17 +17,8 @@ public class PriceEngineTests
     public void GetPrice_GivenDefaultRequest_ShouldReturnQuoteFromZxcvbnm()
     {
         //Arrange
-        var request = new PriceRequest()
-        {
-            RiskData = new RiskData()
-            {
-                DOB = DateTime.Parse("1980-01-01"),
-                FirstName = "John",
-                LastName = "Smith",
-                Make = "Cool New Phone",
-                Value = 500
-            }
-        };
+        var riskData = new RiskData("John", "Smith", 500, "Cool New Phone", DateTime.Parse("1980-01-01"));
+        var request = new PriceRequest(riskData);
 
         //Act
         var actual = _priceEngine.GetPrice(request);

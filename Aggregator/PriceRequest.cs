@@ -1,6 +1,15 @@
-﻿namespace Aggregator;
+﻿using EnsureThat;
 
-public class PriceRequest
+namespace Aggregator;
+
+public sealed record PriceRequest
 {
-    public RiskData RiskData;
+    public PriceRequest(RiskData riskData)
+    {
+        EnsureArg.IsNotNull(riskData, nameof(riskData));
+
+        RiskData = riskData;
+    }
+
+    public RiskData RiskData { get; }
 }
