@@ -5,12 +5,9 @@ namespace Aggregator.Tests;
 [TestFixture]
 public class PriceEngineTests
 {
-    private PriceEngine _priceEngine;
-
     [SetUp]
     public void Setup()
     {
-        _priceEngine = new PriceEngine();
     }
 
     [Test]
@@ -19,9 +16,10 @@ public class PriceEngineTests
         //Arrange
         var riskData = new RiskData("John", "Smith", 500, "Cool New Phone", DateTime.Parse("1980-01-01"));
         var request = new PriceRequest(riskData);
+        var priceEngine = new PriceEngine(request);
 
         //Act
-        var actual = _priceEngine.GetPrice(request);
+        var actual = priceEngine.GetPrice();
 
         //Assert
         var expected = new PriceResponse
