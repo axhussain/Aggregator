@@ -8,19 +8,20 @@ public class PriceEngine
 {
     private readonly PriceRequest _request;
 
+    //Pass request with risk data with details of a gadget, return the best price retrieved from 3 external quotation engines
     public PriceEngine(PriceRequest request)
     {
         EnsureArg.IsNotNull(request, nameof(request));
 
         _request = request;
     }
-
-    //Pass request with risk data with details of a gadget, return the best price retrieved from 3 external quotation engines
+        
     public PriceResponse GetPrice()
     {
         decimal price = 0;
         decimal tax = 0;
-        string insurerName = String.Empty;
+        string insurerName = string.Empty;
+        string error = string.Empty;
 
         //System 1 requires DOB to be specified
         if (_request.RiskData.DOB != null)
@@ -85,8 +86,15 @@ public class PriceEngine
         if (price == 0)
         {
             price = -1;
+            error = "No quotes found.";
         }
 
-        return new PriceResponse(){Insurer = insurerName, Price = price, Tax = tax};
+        return new PriceResponse()
+        {
+            Insurer = insurerName, 
+            Price = price, 
+            Tax = tax, 
+            Error = error 
+        };
     }
 }
