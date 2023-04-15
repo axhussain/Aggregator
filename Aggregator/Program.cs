@@ -31,8 +31,8 @@ internal static class Program
 
     private static string GetPrice(PriceRequest request)
     {
-        var priceEngine = new PriceEngine(request);
-        var response = priceEngine.GetPrice();
+        PriceEngine priceEngine = new(request);
+        PriceResponse response = priceEngine.GetPrice();
 
         if (response.Price == -1)
         {
