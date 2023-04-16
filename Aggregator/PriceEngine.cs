@@ -20,8 +20,7 @@ public class PriceEngine
     private void RegisterQuotationSystems()
     {
         _quotationSystems.Add(new QuotationSystem1("http://quote-system-1.com", "1234"));
-        dynamic systemRequest2 = BuildSystem2Request();
-        _quotationSystems.Add(new QuotationSystem2("http://quote-system-2.com", "1235", systemRequest2));
+        _quotationSystems.Add(new QuotationSystem2("http://quote-system-2.com", "1235", BuildSystem2Request()));
         _quotationSystems.Add(new QuotationSystem3("http://quote-system-3.com", "100"));
     }
 
