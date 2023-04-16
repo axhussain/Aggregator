@@ -16,7 +16,7 @@ public sealed record RiskData
 
         if (decimal.TryParse(value, out decimal parsedValue))
         {
-            EnsureArg.IsNotDefault(parsedValue, nameof(parsedValue));
+            EnsureArg.IsNot(parsedValue, 0, nameof(parsedValue));
             Value = parsedValue;
         }
 

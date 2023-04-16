@@ -15,10 +15,10 @@ public class QuotationSystem2
         //var response = _someExternalService.PostHttpRequest(requestData);
 
         dynamic response = new ExpandoObject();
-        response.Price = 234.56M;
+        response.Price = 77.56M;
         response.HasPrice = true;
         response.Name = "qewtrywrh";
-        response.Tax = 234.56M * 0.12M;
+        response.Tax = 77.56M * 0.12M;
 
         return response;
     }
