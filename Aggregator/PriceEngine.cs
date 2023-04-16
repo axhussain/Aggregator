@@ -114,7 +114,7 @@ public class PriceEngine
             "examplemake3"
         };
 
-        return validMakes.Contains(_request.RiskData.Make ?? "");
+        return validMakes.Contains(_request.RiskData.Make);
     }
 
     private dynamic BuildSystem1Request()

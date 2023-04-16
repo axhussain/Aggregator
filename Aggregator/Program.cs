@@ -24,7 +24,7 @@ internal static class Program
     {
         //Omitted for brevity - Collect input (risk data from the user)
         //Hardcoded here, but would normally be created from the user input above
-        var riskData = new RiskData("John", "Smith", 500, "Cool New Phone", DateTime.Parse("1980-01-01"));
+        var riskData = new RiskData("John", "Smith", "500", "Cool New Phone", "1980-01-01");
         var request = new PriceRequest(riskData);
         return request;
     }
