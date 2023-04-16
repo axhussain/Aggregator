@@ -60,7 +60,7 @@ public class PriceEngineTests
     }
 
     [Test]
-    public void GetPrice_GivenZeroValue_ShouldThrow()
+    public void GetPrice_GivenZeroValue_ShouldThrowArgumentException()
     {
         Assert.Throws<ArgumentException>(() => new RiskData("John", "Smith", "0", "Cool New Phone", "1980-01-01"));
     }

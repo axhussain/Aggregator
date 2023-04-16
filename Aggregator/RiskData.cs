@@ -4,7 +4,7 @@ namespace Aggregator;
 
 public sealed record RiskData
 {
-    public RiskData(string firstName, string lastName, string value, string make, string? dob = null)
+    public RiskData(string firstName, string lastName, string value, string? make, string? dob = null)
     {
         EnsureArg.IsNotNullOrEmpty(firstName, nameof(firstName));
         EnsureArg.IsNotNullOrEmpty(lastName, nameof(lastName));
